@@ -21,4 +21,8 @@ public class HomeHub {
         }
         devices.add(device);
     }
+
+    public List<SmartDevice> getDevicesByRoom(String room){
+        return devices.stream().sorted().toList();
+    }
 }

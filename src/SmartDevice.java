@@ -1,11 +1,13 @@
-public class SmartDevice {
+import java.util.Comparator;
+
+public class SmartDevice implements Comparable {
     private String id;
     private String name;
     private String room;
     private String macAddress;
     private double firmwareVersion;
 
-    private SmartDevice(Builder builder){
+    private SmartDevice(Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.room = builder.room;
@@ -31,6 +33,16 @@ public class SmartDevice {
 
     public double getFirmwareVersion() {
         return firmwareVersion;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        SmartDevice sm = (SmartDevice) o;
+        if (name.equals(sm.getName())){
+            return room.compareTo(sm.getRoom());
+        }
+        return name.compareTo(sm.getName());
+
     }
 
     public static class Builder{
