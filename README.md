@@ -1,1 +1,1 @@
- 
+zadanie smarthome
