@@ -22,4 +22,7 @@ public class SmartBlind implements ManageableDevice {
     @Override public String getStatus() { return "Roleta w stanie: " + state.getClass().getSimpleName(); }
     @Override public String getId() { return id; }
     @Override public String getMacAddress() { return macAddress; }
+
+    @Override
+    public void accept(DeviceVisitor visitor) { visitor.visit(this); }
 }

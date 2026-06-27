@@ -19,4 +19,7 @@ public abstract class DeviceDecorator implements ManageableDevice {
 
     @Override
     public String getMacAddress() { return wrappedDevice.getMacAddress(); }
+
+    @Override
+    public void accept(DeviceVisitor visitor) { wrappedDevice.accept(visitor); }
 }

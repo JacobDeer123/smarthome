@@ -5,4 +5,6 @@ public interface ManageableDevice {
 
     String getId();
     String getMacAddress();
+
+    void accept(DeviceVisitor visitor);
 }

@@ -49,6 +49,11 @@ public class SmartDevice implements Comparable, ManageableDevice {
         return macAddress;
     }
 
+    @Override
+    public void accept(DeviceVisitor visitor) {
+        visitor.visit(this);
+    }
+
     public double getFirmwareVersion() {
         return firmwareVersion;
     }

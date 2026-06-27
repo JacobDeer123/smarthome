@@ -44,4 +44,9 @@ public class ThermostatAdapter implements ManageableDevice {
             System.out.println("Strategia grzewcza nie została ustawiona.");
         }
     }
+
+    @Override
+    public void accept(DeviceVisitor visitor) {
+        visitor.visit(this);
+    }
 }
