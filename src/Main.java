@@ -8,10 +8,14 @@ public class Main {
             HomeHub hub = HomeHub.getInstance();
             hub.registerDevice(energyMonitoredBulb);
 
+            SmartHomeFacade facade = new SmartHomeFacade(hub);
+            facade.goodNightRoutine();
+
             energyMonitoredBulb.turnOn();
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+
     }
 }
