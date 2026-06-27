@@ -33,4 +33,15 @@ public class HomeHub implements  SensorObserver{
         System.out.println("ALARM: Wykryto ruch z czujnika [" + sensorId + "]. Szczegóły: " + eventDetails);
     }
 
+    public void runDiagnostics() {
+        System.out.println("Generowanie raportu diagnostycznego");
+        DiagnosticsVisitor visitor = new DiagnosticsVisitor();
+
+        for (ManageableDevice device : devices) {
+            device.accept(visitor);
+        }
+
+        System.out.println(visitor.getFullReport());
+    }
+
 }
