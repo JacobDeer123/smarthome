@@ -14,6 +14,7 @@ public class ThermostatAdapter implements ManageableDevice {
         legacyThermostat.enableHeating();
     }
 
+
     @Override
     public void turnOff() {
         legacyThermostat.disableHeating();

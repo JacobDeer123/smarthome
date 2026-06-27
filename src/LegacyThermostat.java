@@ -10,4 +10,5 @@ public class LegacyThermostat {
     public double fetchCurrentTemperature() {
         return 22.0;
     }
+
 }
