@@ -1,11 +1,12 @@
 import java.util.Comparator;
 
-public class SmartDevice implements Comparable {
+public class SmartDevice implements Comparable, ManageableDevice {
     private String id;
     private String name;
     private String room;
     private String macAddress;
     private double firmwareVersion;
+    private boolean isOn = false;
 
     private SmartDevice(Builder builder) {
         this.id = builder.id;
@@ -13,6 +14,23 @@ public class SmartDevice implements Comparable {
         this.room = builder.room;
         this.macAddress = builder.macAddress;
         this.firmwareVersion = builder.firmwareVersion;
+    }
+
+    @Override
+    public void turnOn() {
+        this.isOn = true;
+        System.out.println("Urządzenie " + getName() + " włączone.");
+    }
+
+    @Override
+    public void turnOff() {
+        this.isOn = false;
+        System.out.println("Urządzenie " + getName() + " wyłączone.");
+    }
+
+    @Override
+    public String getStatus() {
+        return "Urządzenie " + getName() + " jest " + (isOn ? "włączone" : "wyłączone");
     }
 
     public String getId() {
